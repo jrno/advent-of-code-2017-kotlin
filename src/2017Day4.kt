@@ -2,14 +2,14 @@ import java.io.File
 
 fun main(args: Array<String>) {
 
+    val path = System.getProperty("user.dir")
     val phrases = mutableListOf<String>()
     var valids = 0
 
     // list of strings from file, each representing a phrase
-    File("/Users/jrno/Desktop/2017Day4_input.txt").useLines { line -> line.forEach { l -> phrases.add(l) }}
+    File("$path/inputs/2017Day4_input.txt").useLines { line -> line.forEach { l -> phrases.add(l) }}
 
-
-    phrases.forEach phrase@ { p ->
+    phrases.forEach { p ->
 
         // actual tokens delimited by whitespace
         val words = p.split(Regex(("\\s+")))
