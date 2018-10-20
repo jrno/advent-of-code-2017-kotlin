@@ -11,6 +11,7 @@ fun main(args: Array<String>) {
     var nodeValue = 1
     var nextDirection: Direction = Direction.RIGHT
     var points = mutableListOf<Point>()
+
     points.add(Point(0, 0, 1))
 
     // target number
@@ -63,6 +64,7 @@ fun main(args: Array<String>) {
 }
 
 open class Point constructor(val x: Int, val y: Int, val sum: Int) {
+
     fun neighbourOf(x: Int, y: Int): Boolean {
         return Math.abs(this.x - x) <= 1 && Math.abs(this.y - y)  <= 1
     }
